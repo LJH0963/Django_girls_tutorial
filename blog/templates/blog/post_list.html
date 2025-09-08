@@ -4,19 +4,15 @@
     </head>
     <body>
         <div>
-            <h1><a href="">JangHeon's Blog</a></h1>
+            <h1><a href="/">JangHeon's Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 07.09.2025, 21:16</p>
-            <h2><a href="">My first post</a></h2>
-            <p>I didn't expect to be a backend developer for a game company</p>
-        </div>
-
-        <div>
-            <p>published: 07.09.2025, 21:20</p>
-            <h2><a href="">My second post</a></h2>
-            <p>I've become a big fan of Christopher these days. Maybe 'Orbit' is the best song ever.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
